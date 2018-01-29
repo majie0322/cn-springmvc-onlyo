@@ -1,4 +1,4 @@
-package cn.mj.entity;
+package cn.springmvc.onlyo.entity;
 
 import java.io.Serializable;
 

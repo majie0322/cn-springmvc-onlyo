@@ -1,4 +1,4 @@
-package cn.mj.entity;
+package cn.springmvc.onlyo.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

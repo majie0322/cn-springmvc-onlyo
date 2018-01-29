@@ -1,8 +1,8 @@
-package cn.mj.controller;
+package cn.springmvc.onlyo.swaggerTest.controller;
 
-import cn.mj.entity.Constants;
-import cn.mj.entity.Result;
-import cn.mj.entity.UserVo;
+import cn.springmvc.onlyo.entity.Constants;
+import cn.springmvc.onlyo.entity.Result;
+import cn.springmvc.onlyo.entity.UserVo;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;

@@ -1,4 +1,4 @@
-package cn.mj.entity;
+package cn.springmvc.onlyo.entity;
 
 /**
  * Created by zjx on 2017/6/29.

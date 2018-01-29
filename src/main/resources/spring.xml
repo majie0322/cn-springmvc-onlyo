@@ -19,10 +19,13 @@
 	http://www.springframework.org/schema/mvc 
     http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <bean name="swaggerConfig" class="cn.mj.SwaggerConfig"/>
+    <bean name="swaggerConfig" class="cn.springmvc.onlyo.swaggerTest.SwaggerConfig"/>
+<!--
+    <context:property-placeholder location="classpath:conf/swaggerPackage.properties"/>
+-->
+
     <import resource="classpath:spring-mvc.xml"/>
     <import resource="classpath:spring-db.xml"/>
-    <mvc:default-servlet-handler/>
 
 
 </beans>

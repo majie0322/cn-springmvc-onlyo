@@ -1,4 +1,4 @@
-package cn.mj.service;
+package cn.springmvc.onlyo.service;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
