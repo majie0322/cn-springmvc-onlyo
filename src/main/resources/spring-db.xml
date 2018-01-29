@@ -35,6 +35,32 @@
         <property name="maxWait" value="${jdbc.maxWait}"></property>
 
     </bean>
+    <!-- 指定事务管理器，JPA使用JpaTransactionManager事务管理器实现. -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+
+    <!-- 指定JPA实现 -->
+    <bean id="jpaVendorAdapter"
+          class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+        <property name="showSql" value="false" />
+    </bean>
+    <!-- 适用于所有环境的FactoryBean，能全面控制EntityManagerFactory配置,如指定Spring定义的DataSource等等. -->
+    <bean id="entityManagerFactory"
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <!-- 指定持久化单元名字，即JPA配置文件中指定的 -->
+        <property name="persistenceUnitName" value="myJPA" />
+        <!-- 见上 -->
+        <property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
+        <!-- 见上 -->
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!-- 映射jpa接口-->
+    <jpa:repositories base-package="cn.springmvc.onlyo.dao" entity-manager-factory-ref="entityManagerFactory"/>
+
+    <!-- 开启事务管理注解 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

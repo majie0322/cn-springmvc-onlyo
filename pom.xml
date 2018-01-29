@@ -11,7 +11,9 @@
         <mybatis.version>3.4.1</mybatis.version>
         <druid.version>1.0.27</druid.version>
         <mysql.version>5.1.26</mysql.version>
-
+        <version-hibernate.validator>5.0.1.Final</version-hibernate.validator>
+        <version-hibernate.jpa>1.0.1.Final</version-hibernate.jpa>
+        <version-hibernate>4.2.6.Final</version-hibernate>
     </properties>
 
     <dependencies>
@@ -135,6 +137,50 @@
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>2.5</version>
+        </dependency>
+
+        <!--hibernate的包-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${version-hibernate}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${version-hibernate}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>cglib</artifactId>
+                    <groupId>cglib</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>dom4j</artifactId>
+                    <groupId>dom4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${version-hibernate.validator}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <version>${version-hibernate.jpa}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>${version-hibernate}</version>
+        </dependency>
+
+        <!-- Spring data jpa -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>1.6.2.RELEASE</version>
         </dependency>
     </dependencies>
 
