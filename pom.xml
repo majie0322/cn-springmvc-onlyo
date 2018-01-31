@@ -16,6 +16,18 @@
         <version-hibernate>4.2.6.Final</version-hibernate>
     </properties>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>alimaven</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <distributionManagement>
+        <repository>
+            <id>alimaven</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+    </distributionManagement>
     <dependencies>
 
         <!-- Spring framework -->

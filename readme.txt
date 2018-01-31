@@ -19,3 +19,8 @@
  2.quartz corn规则
  秒 分 时 日 月 周 年
  https://www.cnblogs.com/lazyInsects/p/8075487.html
+
+   3 <!-- 指定持久化单元名字，即JPA配置文件中指定的 -->
+ <!--<property name="persistenceUnitName" value="myJPA" />
+ 这个配置太烦那么就配置 <property name="packagesToScan" value="cn.springmvc.onlyo.entity"></property>
+则 就无需配置。

@@ -35,30 +35,36 @@
         <property name="maxWait" value="${jdbc.maxWait}"></property>
 
     </bean>
-    <!-- 指定事务管理器，JPA使用JpaTransactionManager事务管理器实现. -->
-    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory" />
-    </bean>
+
 
     <!-- 指定JPA实现 -->
     <bean id="jpaVendorAdapter"
           class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
         <property name="showSql" value="false" />
     </bean>
+
     <!-- 适用于所有环境的FactoryBean，能全面控制EntityManagerFactory配置,如指定Spring定义的DataSource等等. -->
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="packagesToScan" value="cn.springmvc.onlyo.entity"></property>
         <!-- 指定持久化单元名字，即JPA配置文件中指定的 -->
-        <property name="persistenceUnitName" value="myJPA" />
-        <!-- 见上 -->
+<!--<property name="persistenceUnitName" value="myJPA" />-->
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
-        <!-- 见上 -->
         <property name="dataSource" ref="dataSource" />
+        <property name="jpaProperties">
+        <props>
+            <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+        </props>
+        </property>
     </bean>
 
     <!-- 映射jpa接口-->
     <jpa:repositories base-package="cn.springmvc.onlyo.dao" entity-manager-factory-ref="entityManagerFactory"/>
 
+    <!-- 指定事务管理器，JPA使用JpaTransactionManager事务管理器实现. -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
     <!-- 开启事务管理注解 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
