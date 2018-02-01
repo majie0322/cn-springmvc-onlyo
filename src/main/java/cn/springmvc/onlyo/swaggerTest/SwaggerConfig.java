@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-    private String basePackage = "cn.springmvc";
+    private String basePackage = "cn.springmvc.onlyo";
 
     @Bean
     public Docket userApi() {

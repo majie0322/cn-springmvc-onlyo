@@ -1,3 +1,4 @@
+/*
 package cn.springmvc.onlyo.swaggerTest.controller;
 
 import cn.springmvc.onlyo.entity.Constants;
@@ -12,13 +13,15 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
+*/
 /**
  * Created by zjx on 2017/6/29.
  *
  * @author zhaojiaxing
  * @version V2.0
  *          Copyright (c)2016 tyj-版权所有
- */
+ *//*
+
 @RestController
 @RequestMapping("/user")
 @Api(description = "用户相关接口文档")
@@ -36,3 +39,4 @@ public class SwaggerController {
     }
 
 }
+*/

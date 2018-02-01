@@ -26,6 +26,10 @@
 
     <import resource="classpath:spring-mvc.xml"/>
     <import resource="classpath:spring-db.xml"/>
+<!--
+    <import resource="classpath:spring-ehcache.xml"/>
+-->
+
 
     <!--使用spring的异步@Async简单定义方式 -->
     <!--  <task:annotation-driven />  -->

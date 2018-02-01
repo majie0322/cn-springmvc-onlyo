@@ -24,3 +24,12 @@
  <!--<property name="persistenceUnitName" value="myJPA" />
  这个配置太烦那么就配置 <property name="packagesToScan" value="cn.springmvc.onlyo.entity"></property>
 则 就无需配置。
+
+
+4  @Cacheable
+value：缓存位置名称，不能为空，如果使用EHCache，
+就是ehcache.xml中声明的cache的name, 指明将值缓存到哪个Cache中
+key：缓存的key，默认为空，既表示使用方法的参数类型及参数值作为key，
+支持SpEL，如果要引用参数值使用井号加参数名，如：#userId，
+condition：触发条件，只有满足条件的情况才会加入缓存，默认为空，
+既表示全部都加入缓存，支持SpEL
