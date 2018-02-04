@@ -26,7 +26,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class QuartzTest {
 
-    @Scheduled(cron = "*/5 * * * * ? ")
+//    @Scheduled(cron = "*/5 * * * * ? ")
     public void test() {
         System.out.println("quartz 启动着。。。");
     }
